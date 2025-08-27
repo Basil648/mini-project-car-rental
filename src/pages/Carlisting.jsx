@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
-import 'bootstrap-icons/font/bootstrap-icons.css'; 
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Link } from "react-router-dom";
 
 function Cars() {
   const [cars, setCars] = useState([]);
@@ -30,13 +31,9 @@ function Cars() {
                   <i className="bi bi-fuel-pump-fill me-2"></i>{car.fuel} <br />
                   <i className="bi bi-currency-dollar me-2"></i>{car.rentPerDay}/day
                 </Card.Text>
-                <Button
-                  variant="primary"
-                  className="mt-auto mx-auto"
-                  style={{ backgroundColor: '#5dade2', borderColor: '#5dade2', width: '60%' }}
-                >
-                  Book Now
-                </Button>
+                <Link to={`/cars/${car.id}`} className="btn btn-primary">
+                  View Details
+                </Link>
               </Card.Body>
             </Card>
           </Col>
