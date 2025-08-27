@@ -1,7 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link, Outlet } from "react-router-dom";
 
-export default function Hero() {
+export default function Home() {
   return (
     <section
       className="hero-section position-relative d-flex align-items-center"
@@ -36,9 +37,14 @@ export default function Hero() {
               Your trusted partner for affordable and premium car rentals.
               Book your ride today and hit the road with comfort & style.
             </p>
-            <button className="btn btn-primary btn-lg rounded-pill mt-4 shadow">
+            <Link
+              to="/cars"
+              className="btn btn-primary btn-md px-5 rounded-pill d-flex align-items-center justify-content-center"
+              style={{ fontWeight: "500" }}
+            >
               Get Started
-            </button>
+              <span style={{ marginLeft: "8px", fontSize: "1.2rem" }}>&rarr;</span>
+            </Link>
           </div>
         </div>
       </div>
