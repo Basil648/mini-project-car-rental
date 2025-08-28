@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import CarDetails from './pages/Cardetails'
 import Booking from './pages/Booking'
-import SearchFilter from './pages/searchfilter'
+import SearchFilter from './pages/Searchfilter'
 
 
 function App() {
