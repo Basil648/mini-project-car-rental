@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import CarDetails from './pages/Cardetails'
 import Booking from './pages/Booking'
+import SearchFilter from './pages/searchfilter'
 
 
 function App() {
@@ -16,12 +17,15 @@ function App() {
         { path: "/", element: <Home /> },
         { path: "/cars", element: <Carlisting /> },
         { path: "/cars/:id", element: <CarDetails /> },
-        { path: "/booking/:id", element: <Booking /> }
+        { path: "/booking/:id", element: <Booking /> },
+        { path: "/search", element: <SearchFilter /> }
       ]
     }
 
   ])
   return <RouterProvider router={routee} />
+
+
 }
 
 export default App
