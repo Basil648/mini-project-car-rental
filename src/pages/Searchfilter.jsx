@@ -94,12 +94,16 @@ export default function SearchFilter() {
                             background: dark ? "#444" : "#e0e0e0",
                             cursor: "pointer",
                             fontSize: 14,
-                            
+
+
                         }}
-                       
+
                     >
-                        <Link to={"/cars"}>← Back</Link>
-                        
+                        <Link to={"/cars"} style={{
+                            textDecoration: "none",
+                            color: "black"
+                        }}>← Back</Link>
+
                     </button>
 
                     {/* Search bar in header */}
@@ -319,12 +323,15 @@ export default function SearchFilter() {
                                             borderRadius: 8,
                                             background: dark ? "#444" : "#e0e0e0",
                                             cursor: "pointer",
-                                            marginTop: 12,
+                                            // marginTop: 12,
                                             fontSize: 14,
                                             fontWeight: 500,
                                         }}
                                     >
-                                       <Link to={`/cars/${car.id}`}> View Details</Link>
+                                        <Link to={`/cars/${car.id} `} style={{
+                                            textDecoration: "none",
+                                            color: "black"
+                                        }}> View Details</Link>
                                     </button>
                                 </div>
                             ))}

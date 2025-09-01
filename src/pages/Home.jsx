@@ -1,85 +1,169 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <section
-      className="hero-section position-relative d-flex align-items-center"
-      style={{
-        height: "100vh",
-        backgroundImage: "url('/car2.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Overlay */}
-      <div
-        className="position-absolute top-0 start-0 w-100 h-100"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-      ></div>
-
-      {/* Content */}
-      <div className="container position-relative text-white">
-        <div className="row align-items-center">
-          <div
-            className="col-12 col-md-8 col-lg-6"
-            style={{ marginLeft: "0", maxWidth: "100%" }}
+    <div style={{ fontFamily: "'Poppins', sans-serif" }}>
+      {/* Hero Section */}
+      <section
+        className="hero-section position-relative d-flex align-items-center text-white"
+        style={{
+          height: "100vh",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/car2.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="container text-center">
+          <h1 className="fw-bold display-3 animate__animated animate__fadeInDown">
+            Welcome to <span className="text-primary">AZURE CARS</span>
+          </h1>
+          <p className="h5 text-warning mt-3 animate__animated animate__fadeInUp">
+            Drive Your Dreams, Wherever You Go!
+          </p>
+          <p className="lead mt-3 w-75 mx-auto animate__animated animate__fadeInUp">
+            Your trusted partner for affordable and premium car rentals. Book
+            your ride today and hit the road with comfort & style.
+          </p>
+          <Link
+            to="/cars"
+            className="btn btn-primary btn-lg px-5 rounded-pill mt-3 shadow-lg"
+            style={{ fontWeight: "600" }}
           >
-            <h1 className="fw-bold display-4 display-md-3 display-lg-2">
-              Welcome to <br />
-              <span className="text-primary">Azure Cars</span>
-            </h1>
-            <p className="h5 text-warning mt-2 d-none d-md-block">
-              Drive Your Dreams, Wherever You Go!
-            </p>
-            <p className="lead mt-3 fs-6 fs-md-5">
-              Your trusted partner for affordable and premium car rentals.
-              Book your ride today and hit the road with comfort & style.
-            </p>
-            <Link
-              to="/cars"
-              className="btn btn-primary btn-md px-5 rounded-pill d-flex align-items-center justify-content-center"
-              style={{ fontWeight: "500" }}
-            >
-              Get Started
-              <span style={{ marginLeft: "8px", fontSize: "1.2rem" }}>&rarr;</span>
-            </Link>
+            Get Started &rarr;
+          </Link>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-5 text-center bg-light">
+        <div className="container">
+          <h2 className="fw-bold mb-5 display-5 text-dark"> Services We Offer</h2>
+          <div className="row g-4">
+            {[
+              { title: "Daily Rentals", desc: "Affordable daily rental options with flexible timing." },
+              { title: "Long-Term Leasing", desc: "Enjoy cars for months with hassle-free leasing." },
+              { title: "Luxury Rides", desc: "Premium vehicles for weddings, events, and VIPs." },
+            ].map((service, i) => (
+              <div key={i} className="col-md-4">
+                <div
+                  className="card h-100 border-0 shadow-lg p-4 rounded-4 service-card"
+                  style={{
+                    background: "linear-gradient(135deg, #e0f7fa, #ffffff)",
+                  }}
+                >
+                  <h5 className="fw-bold text-primary">{service.title}</h5>
+                  <p className="text-muted">{service.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Responsive Styling */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .hero-section {
-            height: auto;
-            padding: 60px 20px;
-          }
-          .hero-section h1 {
-            font-size: 2rem !important;
-          }
-          .hero-section p.lead {
-            font-size: 1rem !important;
-          }
-          .hero-section .btn {
-            width: 100%;
-            padding: 12px 0;
-          }
-        }
+      {/* Suggested Cars Section */}
+      <section className="py-5" style={{ background: "linear-gradient(135deg, #f5f7fa, #e8eefc)" }}>
+        <div className="container text-center">
+          <h2 className="fw-bold mb-5 display-5"> Suggested Cars</h2>
+          <div className="row g-4 justify-content-center">
+            {[
+              {
+                name: "Tesla Model S",
+                price: "$120/day",
+                img: "https://images.unsplash.com/photo-1502877338535-766e1452684a",
+              },
+              {
+                name: "BMW i8",
+                price: "$150/day",
+                img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
+              },
+              {
+                name: "Audi R8",
+                price: "$200/day",
+                img: "https://images.unsplash.com/photo-1604754742629-3df85f1f92a6",
+              },
+            ].map((car, i) => (
+              <div key={i} className="col-md-4">
+                <div className="card border-0 shadow-lg rounded-4 h-100 car-card">
+                  <img
+                    src={car.img}
+                    className="card-img-top rounded-top-4"
+                    alt={car.name}
+                    style={{ height: "200px", objectFit: "cover" }}
+                  />
+                  <div className="card-body">
+                    <h5 className="fw-bold">{car.name}</h5>
+                    <p className="text-muted">{car.price}</p>
+                    <button className="btn btn-outline-primary rounded-pill px-4">
+                      View Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        @media (max-width: 480px) {
-          .hero-section h1 {
-            font-size: 1.5rem !important;
-          }
-          .hero-section p.h5 {
-            font-size: 1rem !important;
-          }
-          .hero-section p.lead {
-            font-size: 0.9rem !important;
-          }
+      {/* Team Section */}
+      <section className="py-5 bg-white">
+        <div className="container text-center">
+          <h2 className="fw-bold mb-5 display-5"> Meet Our Team</h2>
+          <div className="row g-4">
+            {[
+              { name: "John Doe", role: "CEO", img: "https://randomuser.me/api/portraits/men/11.jpg" },
+              { name: "Jane Smith", role: "Operations Manager", img: "https://randomuser.me/api/portraits/women/12.jpg" },
+              { name: "David Lee", role: "Lead Engineer", img: "https://randomuser.me/api/portraits/men/13.jpg" },
+              { name: "Emily Johnson", role: "UX Designer", img: "https://randomuser.me/api/portraits/women/14.jpg" },
+            ].map((person, i) => (
+              <div key={i} className="col-md-3">
+                <div className="team-card p-3">
+                  <img
+                    src={person.img}
+                    alt={person.name}
+                    className="rounded-circle border border-3 border-primary shadow mb-3"
+                    width="120"
+                    height="120"
+                  />
+                  <h6 className="fw-bold">{person.name}</h6>
+                  <p className="text-muted">{person.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-5" style={{ background: "linear-gradient(135deg, #e3f2fd, #ffffff)" }}>
+        <div className="container text-center">
+          <h2 className="fw-bold mb-5 display-5"> What Our Clients Say</h2>
+          <div className="row g-4 justify-content-center">
+            {[
+              { text: "Azure Cars made my trip seamless. The booking was smooth and the car was in excellent condition!", author: "Michael Carter" },
+              { text: "Professional team and top-class vehicles. Highly recommend their services!", author: "Sarah Williams" },
+              { text: "Great experience overall. Affordable pricing and the staff was really supportive.", author: "Alex Brown" },
+            ].map((t, i) => (
+              <div key={i} className="col-md-4">
+                <div className="card border-0 shadow-lg p-4 h-100 rounded-4 testimonial-card">
+                  <p className="fst-italic text-muted">“{t.text}”</p>
+                  <h6 className="fw-bold mt-3 text-primary">– {t.author}</h6>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Extra Styling */}
+      <style>{`
+        .service-card:hover, .car-card:hover, .testimonial-card:hover {
+          transform: translateY(-8px);
+          transition: all 0.3s ease;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
       `}</style>
-    </section>
+    </div>
   );
 }

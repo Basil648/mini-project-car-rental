@@ -10,11 +10,11 @@ import SearchFilter from './pages/Searchfilter'
 
 function App() {
   const routee = createBrowserRouter([
+    { path: "/", element: <Home /> },
 
     {
       path: "/", element: <Layout />,
       children: [
-        { path: "/", element: <Home /> },
         { path: "/cars", element: <Carlisting /> },
         { path: "/cars/:id", element: <CarDetails /> },
         { path: "/booking/:id", element: <Booking /> },

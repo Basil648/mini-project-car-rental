@@ -1,0 +1,39 @@
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* soft shadow */
+}
+
+.loading-track {
+    width: 200px;
+    /* length of the track */
+    height: 60px;
+    border: 2px dashed #ccc;
+    /* optional, shows the track */
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+}
+
+.loading-car {
+    height: 40px;
+    /* adjust car size */
+    position: absolute;
+    left: 0;
+    animation: drive-sideways 2s linear infinite alternate;
+}
+
+@keyframes drive-sideways {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 150px;
+        /* track width minus car width */
+    }
+}
