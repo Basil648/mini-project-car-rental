@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <div style={{ fontFamily: "'Stardos Stencil', sans-serif" }}>
       {/* Hero Section */}
       <section
         className="hero-section position-relative d-flex align-items-center text-white"
         style={{
           height: "100vh",
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/car2.jpg')",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/28292043/pexels-photo-28292043.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -42,19 +42,58 @@ export default function Home() {
           <h2 className="fw-bold mb-5 display-5 text-dark"> Services We Offer</h2>
           <div className="row g-4">
             {[
-              { title: "Daily Rentals", desc: "Affordable daily rental options with flexible timing." },
-              { title: "Long-Term Leasing", desc: "Enjoy cars for months with hassle-free leasing." },
-              { title: "Luxury Rides", desc: "Premium vehicles for weddings, events, and VIPs." },
+              {
+                title: "Daily Rentals",
+                desc: "Affordable daily rental options with flexible timing.",
+                img: "https://images.pexels.com/photos/97079/pexels-photo-97079.jpeg",
+              },
+              {
+                title: "Luxury Rides",
+                desc: "Premium vehicles for weddings, events, and VIP experiences.",
+                img: "https://images.pexels.com/photos/3786091/pexels-photo-3786091.jpeg",
+              },
+              {
+                title: "Easy Payments",
+                desc: "Flexible payment methods, including cards, UPI, and wallets.",
+                img: "https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg",
+              },
+              {
+                title: "24/7 Support",
+                desc: "Round-the-clock customer support to assist you anytime.",
+                img: "https://images.pexels.com/photos/7689884/pexels-photo-7689884.jpeg",
+              },
+              {
+                title: "GPS Navigation",
+                desc: "Get real-time GPS navigation and avoid getting lost on your trips.",
+                img: "https://images.pexels.com/photos/244822/pexels-photo-244822.jpeg",
+              },
+              {
+                title: " Damage Protection & Insurance Options",
+                desc: "Stay protected on every ride with flexible damage coverage",
+                img: "https://images.pexels.com/photos/2265634/pexels-photo-2265634.jpeg",
+              },
             ].map((service, i) => (
               <div key={i} className="col-md-4">
                 <div
-                  className="card h-100 border-0 shadow-lg p-4 rounded-4 service-card"
+                  className="card h-100 border-0 shadow-lg p-5 rounded-4 service-card d-flex flex-column align-items-center justify-content-center"
                   style={{
+                    minHeight: "380px",
                     background: "linear-gradient(135deg, #e0f7fa, #ffffff)",
                   }}
                 >
+                  {/* Service Image */}
+                  <img
+                    src={service.img}
+                    alt={service.title}
+                    className="mb-4"
+                    style={{ width: "200px", height: "200px", objectFit: "contain" }}
+                  />
+
+                  {/* Service Title */}
                   <h5 className="fw-bold text-primary">{service.title}</h5>
-                  <p className="text-muted">{service.desc}</p>
+
+                  {/* Service Description */}
+                  <p className="text-muted mt-2">{service.desc}</p>
                 </div>
               </div>
             ))}
@@ -81,7 +120,7 @@ export default function Home() {
               {
                 name: "Audi R8",
                 price: "$200/day",
-                img: "https://images.unsplash.com/photo-1604754742629-3df85f1f92a6",
+                img: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg",
               },
             ].map((car, i) => (
               <div key={i} className="col-md-4">
@@ -96,7 +135,7 @@ export default function Home() {
                     <h5 className="fw-bold">{car.name}</h5>
                     <p className="text-muted">{car.price}</p>
                     <button className="btn btn-outline-primary rounded-pill px-4">
-                      View Details
+                     <Link to={"/cars"} style={{textDecoration:"none", color:"black"}}> View Cars</Link>
                     </button>
                   </div>
                 </div>
@@ -114,8 +153,8 @@ export default function Home() {
             {[
               { name: "John Doe", role: "CEO", img: "https://randomuser.me/api/portraits/men/11.jpg" },
               { name: "Jane Smith", role: "Operations Manager", img: "https://randomuser.me/api/portraits/women/12.jpg" },
-              { name: "David Lee", role: "Lead Engineer", img: "https://randomuser.me/api/portraits/men/13.jpg" },
-              { name: "Emily Johnson", role: "UX Designer", img: "https://randomuser.me/api/portraits/women/14.jpg" },
+              { name: "David Lee", role: "Manager", img: "https://randomuser.me/api/portraits/men/13.jpg" },
+              { name: "Emily Johnson", role: "Public Relation Officer", img: "https://randomuser.me/api/portraits/women/14.jpg" },
             ].map((person, i) => (
               <div key={i} className="col-md-3">
                 <div className="team-card p-3">
@@ -136,18 +175,47 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-5" style={{ background: "linear-gradient(135deg, #e3f2fd, #ffffff)" }}>
+      <section
+        className="py-5"
+        style={{ background: "linear-gradient(135deg, #e3f2fd, #ffffff)" }}
+      >
         <div className="container text-center">
           <h2 className="fw-bold mb-5 display-5"> What Our Clients Say</h2>
           <div className="row g-4 justify-content-center">
             {[
-              { text: "Azure Cars made my trip seamless. The booking was smooth and the car was in excellent condition!", author: "Michael Carter" },
-              { text: "Professional team and top-class vehicles. Highly recommend their services!", author: "Sarah Williams" },
-              { text: "Great experience overall. Affordable pricing and the staff was really supportive.", author: "Alex Brown" },
+              {
+                text: "Azure Cars made my trip seamless. The booking was smooth and the car was in excellent condition!",
+                author: "Michael Carter",
+                img: "https://randomuser.me/api/portraits/men/32.jpg",
+              },
+              {
+                text: "Professional team and top-class vehicles. Highly recommend their services!",
+                author: "Sarah Williams",
+                img: "https://randomuser.me/api/portraits/women/44.jpg",
+              },
+              {
+                text: "Great experience overall. Affordable pricing and the staff was really supportive.",
+                author: "Alex Brown",
+                img: "https://randomuser.me/api/portraits/men/76.jpg",
+              },
             ].map((t, i) => (
               <div key={i} className="col-md-4">
-                <div className="card border-0 shadow-lg p-4 h-100 rounded-4 testimonial-card">
-                  <p className="fst-italic text-muted">“{t.text}”</p>
+                <div
+                  className="card border-0 shadow-lg p-5 h-100 rounded-4 testimonial-card d-flex flex-column align-items-center justify-content-between"
+                  style={{ minHeight: "380px" }}
+                >
+                  {/* Avatar */}
+                  <img
+                    src={t.img}
+                    alt={t.author}
+                    className="rounded-circle mb-3"
+                    style={{ width: "80px", height: "80px", objectFit: "cover", border: "3px solid #0d6efd" }}
+                  />
+
+                  {/* Text */}
+                  <p className="fst-italic text-muted flex-grow-1">“{t.text}”</p>
+
+                  {/* Author */}
                   <h6 className="fw-bold mt-3 text-primary">– {t.author}</h6>
                 </div>
               </div>
@@ -158,6 +226,8 @@ export default function Home() {
 
       {/* Extra Styling */}
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap');
+
         .service-card:hover, .car-card:hover, .testimonial-card:hover {
           transform: translateY(-8px);
           transition: all 0.3s ease;

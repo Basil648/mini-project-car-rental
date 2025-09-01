@@ -291,9 +291,9 @@ export default function SearchFilter() {
                                         flexDirection: "column",
                                     }}
                                 >
-                                    {car.image && (
+                                    {car.images[1] && (
                                         <img
-                                            src={car.image}
+                                            src={car.images[1]}
                                             alt={car.name}
                                             style={{
                                                 width: "100%",
