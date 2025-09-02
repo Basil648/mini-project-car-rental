@@ -1,32 +1,10 @@
-import { useEffect, useState } from "react";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { Link } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import '../App.css'
 
 function Cars() {
-  const [cars, setCars] = useState([]);
-
-  useEffect(() => {
-    fetch("https://my-json-server.typicode.com/basil648/my_fake_api/cars")
-      .then(res => res.json())
-      .then(data => setCars(data))
-      .catch(err => console.error("Error fetching cars:", err));
-  }, []);
-
-
-  if (!cars) {
-    return (
-      <div className="loading-track">
-        <img
-          src="https://imgs.search.brave.com/yFZVuR9TbZ9iF1zAWK4a6OC7Ft0cKp7435GOM8toeiE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c3ZncmVwby5jb20v/c2hvdy81MDAwODEv/Y2FyLnN2Zw"   // your side-profile car SVG
-          alt="loading car"
-          className="loading-car"
-        />
-      </div>
-    );
-  }
-
+  const cars = useLoaderData();
   return (
     <Container className="py-5">
       <Row className="g-4">
