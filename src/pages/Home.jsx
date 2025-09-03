@@ -33,6 +33,7 @@ export default function Home() {
           >
             Get Started &rarr;
           </Link>
+          <button style={{ backgroundColor: "gray" }}><Link to={"/login"}>login</Link></button>
         </div>
       </section>
 
@@ -135,7 +136,7 @@ export default function Home() {
                     <h5 className="fw-bold">{car.name}</h5>
                     <p className="text-muted">{car.price}</p>
                     <button className="btn btn-outline-primary rounded-pill px-4">
-                     <Link to={"/cars"} style={{textDecoration:"none", color:"black"}}> View Cars</Link>
+                      <Link to={"/cars"} style={{ textDecoration: "none", color: "black" }}> View Cars</Link>
                     </button>
                   </div>
                 </div>
