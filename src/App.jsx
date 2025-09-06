@@ -12,6 +12,8 @@ import SignupPage from './components/Signup';
 import ProtectedRoute from './components/ProtectedRoute';
 import LocalCarDetails from './pages/Localcardetail';
 import Wishlist from './components/Wishlist';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 
 const carListLoader = async () => {
@@ -49,7 +51,9 @@ function App() {
           )
         },
         { path: "/search", element: <SearchFilter /> },
-        {path:"/wishlist",element: <Wishlist/>}
+        { path: "/wishlist", element: <Wishlist /> },
+        { path: "/about", element: <About /> },
+        { path: "/contact", element: <Contact /> }
       ]
     }
   ]);
