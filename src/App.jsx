@@ -10,6 +10,7 @@ import LoginPage from './components/Login';
 import AdminPanel from './pages/Admin'; // import AdminPanel
 import SignupPage from './components/Signup';
 import ProtectedRoute from './components/ProtectedRoute';
+import LocalCarDetails from './pages/Localcardetail';
 
 
 const carListLoader = async () => {
@@ -37,6 +38,8 @@ function App() {
       children: [
         { path: "/cars", element: <Carlisting />, loader: carListLoader },
         { path: "/cars/:id", element: <CarDetails /> },
+        { path: "/local-car/:id", element: < LocalCarDetails /> },
+
         {
           path: "/booking/:id", element: (
             <ProtectedRoute>

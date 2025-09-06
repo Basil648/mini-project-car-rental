@@ -31,19 +31,25 @@ export default function AdminPanel() {
       return;
     }
 
+    // ✅ Get last used ID from localStorage, start from 10
+    let lastId = parseInt(localStorage.getItem("lastCarId")) || 10;
+
     const newCar = {
-      id: Date.now(),
+      id: lastId + 1, // first one will be 11
       name,
       seats: parseInt(seats),
       fuel,
       rentPerDay: parseInt(rentPerDay),
       status, // available / not available
-      images: [image], // you can later allow multiple URLs
+      images: [image], // can later allow multiple URLs
     };
 
     const updatedCars = [...cars, newCar];
     setCars(updatedCars);
     localStorage.setItem("localCars", JSON.stringify(updatedCars));
+
+    // ✅ Save last used ID so it continues correctly
+    localStorage.setItem("lastCarId", newCar.id);
 
     // clear input fields
     setName("");
@@ -64,7 +70,6 @@ export default function AdminPanel() {
   return (
     <div style={{ textAlign: "center", marginTop: "30px" }}>
       <h1>Welcome, Admin!</h1>
-      <p>This is your admin panel.</p>
 
       {/* === Add Car Form === */}
       <div style={{ marginTop: "20px", padding: "20px", border: "1px solid #ddd", borderRadius: "10px" }}>

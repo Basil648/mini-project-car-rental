@@ -34,10 +34,10 @@ function Cars() {
                 <Card.Body className="d-flex flex-column">
                   <Card.Title className="fw-bold">{car.name}</Card.Title>
 
-                  {/* Badge (plain, no background color logic) */}
+                 
                   <div
                     style={{
-                      backgroundColor: "#d3d3d3",
+                      backgroundColor: "#25a0a4ff",
                       display: "inline-block",
                       padding: "2px 8px",
                       borderRadius: "6px",
@@ -74,7 +74,7 @@ function Cars() {
       {/* === NEW ADDITIONS SECTION === */}
       <section className="py-5">
         <h2 style={{ textAlign: "center", marginBottom: "30px" }}>
-          NEW ADDITIONS
+          NEWEST  ADDITIONS
         </h2>
         <Container>
           {localCars.length === 0 ? (
@@ -98,15 +98,11 @@ function Cars() {
                         {car.fuel} <br />
                         <i className="bi bi-currency-dollar me-2"></i>
                         {car.rentPerDay}/day <br />
-                        <i className="bi bi-info-circle me-2"></i>
-                        Status: {car.status}
                       </Card.Text>
-                      <Link
-                        to={`/cars/${car.id}`}
-                        className="btn btn-primary mt-auto"
-                      >
+                      <Link to={`/local-car/${car.id}`} className="btn btn-primary mt-auto">
                         View Details
                       </Link>
+
                     </Card.Body>
                   </Card>
                 </Col>
