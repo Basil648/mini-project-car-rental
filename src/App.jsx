@@ -11,6 +11,7 @@ import AdminPanel from './pages/Admin'; // import AdminPanel
 import SignupPage from './components/Signup';
 import ProtectedRoute from './components/ProtectedRoute';
 import LocalCarDetails from './pages/Localcardetail';
+import Wishlist from './components/Wishlist';
 
 
 const carListLoader = async () => {
@@ -47,7 +48,8 @@ function App() {
             </ProtectedRoute>
           )
         },
-        { path: "/search", element: <SearchFilter /> }
+        { path: "/search", element: <SearchFilter /> },
+        {path:"/wishlist",element: <Wishlist/>}
       ]
     }
   ]);

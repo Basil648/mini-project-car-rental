@@ -17,6 +17,7 @@ function LoginPage() {
         if (username === "admin" && password === "1234") {
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("isAdmin", "true");
+            localStorage.setItem("username", "admin"); //  save admin username
             navigate("/admin");
             return;
         }
@@ -30,6 +31,7 @@ function LoginPage() {
         if (userExists) {
             localStorage.setItem("isLoggedIn", "true");
             localStorage.setItem("isAdmin", "false");
+            localStorage.setItem("username", username); // save user’s username
             navigate(from, { replace: true }); // redirect to original page or /cars
         } else {
             setError("Invalid credentials");
