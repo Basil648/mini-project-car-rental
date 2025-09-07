@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, Button, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 
 function Wishlist() {
   const [wishlistIds, setWishlistIds] = useState([]);
@@ -52,35 +54,134 @@ function Wishlist() {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+    <div style={{ padding: "15px" }}>
+      <h2
+        style={{
+          textAlign: "center",
+          marginBottom: "15px",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "1.5rem",
+        }}
+      >
         {currentUser}'s Wishlist
       </h2>
 
       {wishlistCars.length === 0 ? (
         <p style={{ textAlign: "center" }}>Your wishlist is empty.</p>
       ) : (
-        <Row>
+        <Row className="g-3">
           {wishlistCars.map((car) => (
-            <Col md={4} key={car.id} style={{ marginBottom: "20px" }}>
-              <Card>
+            <Col xs={12} sm={6} md={3} key={car.id}>
+              <Card
+                className="shadow-sm border-0 h-100"
+                style={{
+                  borderRadius: "0",
+                  overflow: "hidden",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  backgroundColor: "#ffffff",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-4px)";
+                  e.currentTarget.style.boxShadow = "0 6px 12px rgba(0,0,0,0.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 3px 6px rgba(0,0,0,0.05)";
+                }}
+              >
+                {/* Car Image */}
                 <Card.Img
                   variant="top"
                   src={car.images ? car.images[0] : car.image}
+                  style={{
+                    height: "140px", // smaller image
+                    objectFit: "cover",
+                    borderBottom: "1px solid #e9ecef",
+                  }}
                 />
-                <Card.Body>
-                  <Card.Title>{car.name}</Card.Title>
-                  <Card.Text>
-                    Seats: {car.seats} <br />
-                    Fuel: {car.fuel} <br />
-                    Rent/Day: ₹{car.rentPerDay}
-                  </Card.Text>
-                  <Button
-                    variant="danger"
-                    onClick={() => removeFromWishlist(car.id)}
+
+                {/* Card Body */}
+                <Card.Body
+                  className="d-flex flex-column"
+                  style={{ padding: "12px", fontFamily: "'Poppins', sans-serif" }}
+                >
+                  {/* Title */}
+                  <Card.Title
+                    className="fw-bold mb-1"
+                    style={{ fontSize: "1rem", color: "#1a1a1a" }}
                   >
-                     Remove
-                  </Button>
+                    {car.name}
+                  </Card.Title>
+
+                  {/* Car Info */}
+                  <div
+                    className="d-flex justify-content-between align-items-center mb-2"
+                    style={{ fontSize: "0.8rem", color: "#495057" }}
+                  >
+                    <span>
+                      <i className="bi bi-people-fill me-1"></i>
+                      {car.seats} Seats
+                    </span>
+                    <span>
+                      <i className="bi bi-fuel-pump-fill me-1"></i>
+                      {car.fuel}
+                    </span>
+                    <span>
+                      <i className="bi bi-currency-dollar me-1"></i>
+                      {car.rentPerDay}/day
+                    </span>
+                  </div>
+
+                  {/* Buttons Side by Side */}
+                  <div className="d-flex gap-2 mt-auto">
+                    <button
+                      onClick={() => removeFromWishlist(car.id)}
+                      style={{
+                        flex: 1,
+                        backgroundColor: "#ff4d4f",
+                        color: "#ffffff",
+                        padding: "8px",
+                        border: "none",
+                        textAlign: "center",
+                        fontSize: "0.8rem",
+                        fontWeight: "500",
+                        borderRadius: "0",
+                        transition: "background-color 0.2s ease",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.target.style.backgroundColor = "#d9363e")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.target.style.backgroundColor = "#ff4d4f")
+                      }
+                    >
+                      Remove
+                    </button>
+
+                    <button
+                      style={{
+                        flex: 1,
+                        backgroundColor: "#1a1a1a",
+                        color: "#ffffff",
+                        padding: "8px",
+                        border: "none",
+                        textAlign: "center",
+                        fontSize: "0.8rem",
+                        fontWeight: "500",
+                        borderRadius: "0",
+                        transition: "background-color 0.2s ease",
+                       
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.target.style.backgroundColor = "#343a40")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.target.style.backgroundColor = "#1a1a1a")
+                      }
+                    >
+                     <Link to={`/cars/${car.id}`} style={{ textDecoration:"none", color:"white"}}> View Details</Link>
+                    </button>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>
