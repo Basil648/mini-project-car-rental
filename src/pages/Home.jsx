@@ -4,18 +4,19 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: "'Stardos Stencil', sans-serif" }}>
+      <div style={{ fontFamily: "'Poppins', sans-serif" }}>
       {/* Hero Section */}
       <section
         className="hero-section position-relative d-flex align-items-center text-white"
         style={{
           height: "100vh",
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/28292043/pexels-photo-28292043.jpeg')",
+          backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/30685286/pexels-photo-30685286.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
         }}
       >
-        <div className="container text-center">
+        <div className="container d-flex flex-column align-items-center justify-content-center text-center">
           <h1 className="fw-bold display-3 animate__animated animate__fadeInDown">
             Welcome to <span className="text-primary">AZURE CARS</span>
           </h1>
@@ -33,9 +34,31 @@ export default function Home() {
           >
             Get Started &rarr;
           </Link>
-          <button style={{ backgroundColor: "gray" }}><Link to={"/login"}>login</Link></button>
         </div>
       </section>
+
+      {/* Login Button */}
+      <button 
+        style={{ 
+          backgroundColor: "gray", 
+          position: "fixed", 
+          top: "20px", 
+          right: "20px", 
+          borderRadius: "25px", 
+          padding: "10px 20px",
+          zIndex: "1000"
+        }}
+      >
+        <Link 
+          to="/login" 
+          style={{ 
+            textDecoration: "none", 
+            color: "white" 
+          }}
+        >
+          Login
+        </Link>
+      </button>
 
       {/* Services Section */}
       <section className="py-5 text-center bg-light">
@@ -227,12 +250,19 @@ export default function Home() {
 
       {/* Extra Styling */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
         .service-card:hover, .car-card:hover, .testimonial-card:hover {
           transform: translateY(-8px);
           transition: all 0.3s ease;
           box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+          .hero-section {
+            background-size: cover;
+            background-attachment: scroll;
+          }
         }
       `}</style>
     </div>
