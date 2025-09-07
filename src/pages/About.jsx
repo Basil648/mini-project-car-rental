@@ -7,7 +7,7 @@ export default function About() {
       <div
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1600&q=80')",
+            "url('https://images.pexels.com/photos/28891887/pexels-photo-28891887.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "70vh", // increased height

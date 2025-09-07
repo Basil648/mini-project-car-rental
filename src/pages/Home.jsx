@@ -1,32 +1,30 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+import heroImg from '../assets/hero.png';
 
 export default function Home() {
   return (
-      <div style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <div style={{ fontFamily: "'Poppins', sans-serif" }}>
       {/* Hero Section */}
       <section
         className="hero-section position-relative d-flex align-items-center text-white"
-        style={{
-          height: "100vh",
-          backgroundImage: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/30685286/pexels-photo-30685286.jpeg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
+        style={{ height: "100vh" }}
       >
-        <div className="container d-flex flex-column align-items-center justify-content-center text-center">
-          <h1 className="fw-bold display-3 animate__animated animate__fadeInDown">
-          <span className="text-primary">AZURE CARS</span>
-          </h1>
-          <p className="h5 text-warning mt-3 animate__animated animate__fadeInUp">
-            Drive Your Dreams, Wherever You Go!
-          </p>
-          <p className="lead mt-3 w-75 mx-auto animate__animated animate__fadeInUp">
-            Your trusted partner for affordable and premium car rentals. Book
-            your ride today and hit the road with comfort & style.
-          </p>
+        {/* Background Image */}
+        <img
+          src={heroImg}
+          alt="Hero"
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{
+            objectFit: "cover",
+            zIndex: -1,
+            // filter: "brightness(20%)", // dark overlay effect
+          }}
+        />
+
+        {/* Content */}
+        <div className=" mt-auto mb-5 container d-flex flex-column align-items-center justify-content-center text-center">
           <Link
             to="/cars"
             className="btn btn-primary btn-lg px-5 rounded-pill mt-3 shadow-lg"
@@ -38,22 +36,22 @@ export default function Home() {
       </section>
 
       {/* Login Button */}
-      <button 
-        style={{ 
-          backgroundColor: "gray", 
-          position: "fixed", 
-          top: "20px", 
-          right: "20px", 
-          borderRadius: "25px", 
+      <button
+        style={{
+          backgroundColor: "gray",
+          position: "fixed",
+          top: "20px",
+          right: "20px",
+          borderRadius: "25px",
           padding: "10px 20px",
           zIndex: "1000"
         }}
       >
-        <Link 
-          to="/login" 
-          style={{ 
-            textDecoration: "none", 
-            color: "white" 
+        <Link
+          to="/login"
+          style={{
+            textDecoration: "none",
+            color: "white"
           }}
         >
           Login
