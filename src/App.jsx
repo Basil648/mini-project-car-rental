@@ -15,6 +15,7 @@ import Wishlist from './components/Wishlist';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Messages from './components/Messages';
+import Help from './components/Help';
 
 
 const carListLoader = async () => {
@@ -55,6 +56,8 @@ function App() {
         { path: "/wishlist", element: <Wishlist /> },
         { path: "/about", element: <About /> },
         { path: "/contact", element: <Contact /> },
+        { path: "/help", element: <Help /> }
+
 
       ]
     }

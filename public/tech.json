@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Arjun Mehta",
+        "location": "Kochi, Kerala",
+        "contact": "+91 98765 43210",
+        "image": "https://imgs.search.brave.com/ql0tAJ8jh-sRJvAcLlD_E3LUtunoQOsphg5eShhcEsc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjcw/OTA4NDcxL3Bob3Rv/L3BvcnRyYWl0LW9m/LWNhci1tZWNoYW5p/Yy13aXRoLWhhbmQt/dG9vbHMtaW4tZ2Fy/YWdlLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1Pb1p5UlVL/RFBWazlNMjV1NEV0/LVV0anVibjdzb2Vp/V2lHNmlfZzBZalJF/PQ"
+    },
+    {
+        "id": 2,
+        "name": "Priya Nair",
+        "location": "Thiruvananthapuram, Kerala",
+        "contact": "+91 87654 32109",
+        "image": "https://imgs.search.brave.com/xJZGhF9oENPFZqfmhvjJnNwr8Gf1x-N5-5EIVen9TOE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODI3/ODEwODE4L3Bob3Rv/L3BvcnRyYWl0LW9m/LXlvdW5nLWZlbWFs/ZS1tZWNoYW5pYy1p/bi1nYXJhZ2UuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPW5E/SnhDS2QwX1JvQ3J5/ajVrM3RwT2hXWnRv/XzlDd29hMjNrZmFR/YkNTaTg9"
+    },
+    {
+        "id": 3,
+        "name": "Rahul Sharma",
+        "location": "Kozhikode, Kerala",
+        "contact": "+91 99887 76655",
+        "image": "https://imgs.search.brave.com/031QNjFV9yFu5htuJSRJeXpVpwqnrNroWRU9_jQNQgM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQw/ODg0ODkzNi9waG90/by9wb3J0cmFpdC1v/Zi1hLW1pZC1hZHVs/dC1tYW4td29ya2lu/Zy1vbi1tYWNoaW5l/LWluLWEtdGV4dGls/ZS1mYWN0b3J5Lmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz01/YVNEOW1hV01GcHhz/YV9vbFZVaVZWZGl2/LVB3eGJtem5aeVJQ/V2J4MHhnPQ"
+    },
+    {
+        "id": 4,
+        "name": "Sneha Iyer",
+        "location": "Thrissur, Kerala",
+        "contact": "+91 88990 22334",
+        "image": "https://imgs.search.brave.com/T53MOIDPD3hSAIs05Lb0ukhgVgCRTqgvREg1kCJFbuA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTgy/MjQzNjY2Mi92aWRl/by9wb3J0cmFpdC1p/bmRpYW4tZW5naW5l/ZXItd29tYW4taW4t/ZmFjdG9yeS5qcGc_/cz02NDB4NjQwJms9/MjAmYz02S1VaNncw/MmpSb2t1eHE2T3la/ZC1iQjZXUlBRM29Q/S2xXRlRjRHl4MHBB/PQ"
+    },
+    {
+        "id": 5,
+        "name": "Amit Patel",
+        "location": "Alappuzha, Kerala",
+        "contact": "+91 77665 11223",
+        "image": "https://imgs.search.brave.com/okBaGs1LgaZOkyrRuMHuKpEzv8-3FoVdzBpM-5osP_I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9wb3J0cmFp/dC1oYXBweS1jYXIt/bWVjaGFuaWMtbW91/c3RhY2hlLTI2MG53/LTIwNDcxNjU4NzEu/anBn"
+    },
+    {
+        "id": 6,
+        "name": "Kiran Das",
+        "location": "Palakkad, Kerala",
+        "contact": "+91 98112 55667",
+        "image": "https://imgs.search.brave.com/dsBNMGFWSJKbEaFtoebLtAIBmB-YbeaLYUldbHH1p1M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9wb3J0/cmFpdC1pbmRpYW4t/bWFuLXdvcmtlci1n/YXJhZ2UtYXV0by1t/ZWNoYW5pYy1oYXBw/eS13b3JrLWNhci1z/ZXJ2aWNlLXJlcGxh/Y2UtdHlyZS12ZWhp/Y2xlLW1haW50ZW5h/bmNlLTMwODI3MjEz/Ni5qcGc"
+    },
+    {
+        "id": 7,
+        "name": "Arjun Verma",
+        "location": "Kollam, Kerala",
+        "contact": "+91 97654 33445",
+        "image": "https://imgs.search.brave.com/Py3j_r_03L9-zVDKR7RshKqzsd-VV-FTrXnBsZ_loOc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9pbmRp/YW4tY2FyLW1lY2hh/bmljLXN0YW5kaW5n/LXdvcmtpbmctc2Vy/dmljZS1zdGF0aW9u/LXNwZWNpYWxpc3Rz/LWV4YW1pbmluZy1s/aWZ0ZWQtcHJvZmVz/c2lvbmFsLXJlcGFp/cm1lbi13ZWFyaW5n/LTI3MzU3NjA1MC5q/cGc"
+    },
+    {
+        "id": 8,
+        "name": "Manish Gupta",
+        "location": "Kannur, Kerala",
+        "contact": "+91 96789 22334",
+        "image": "https://imgs.search.brave.com/BL22cMIZQs2Mmu_jt-fNuMFXaJ6NTH4eSNmkPepkeFY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTUz/Mjk4MDM4Mi9waG90/by95b3VuZy1lbnRy/ZXByZW5ldXItd29y/ay1hdC1jYXItZ2Fy/YWdlLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1TdHlLUGJS/VGxfcl91c2x0ai1h/dXpyM0hTZXJlMTFi/ajE4THRfVFJzbUdV/PQ"
+    },
+    {
+        "id": 9,
+        "name": "Ritika Singh",
+        "location": "Pathanamthitta, Kerala",
+        "contact": "+91 94566 77889",
+        "image": "https://imgs.search.brave.com/KxZYI1hXt_OYwqN4-STxMXoA23t24PGeX-itjoOjn2w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTAy/MDY3MzEzL3Bob3Rv/L2ZlbWFsZS1hcHBy/ZW50aWNlLXdpdGgt/Y2xpcGJvYXJkLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz0z/RHkteVVmSXYyRHlZ/c3NKZ1hUdUJacWZ6/S3FHWjZxWU5MZEpY/Wmd0MG80PQ"
+    },
+    {
+        "id": 10,
+        "name": "Sanjay Rao",
+        "location": "Malappuram, Kerala",
+        "contact": "+91 93456 66778",
+        "image": "https://imgs.search.brave.com/MJfLBI62fsghSrdC_8VUdRLkM7PCzVgAdRA2v_7S7Nc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI2/MjU3OTA5My9waG90/by9pbmR1c3RyaWFs/LXdvcmtlci1hdC1m/YWN0b3J5LmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz00c0hL/cmtpVUExRTd0VHgw/emEtTkQ2bThZRHhW/SnZJdzBQM0I4SEFZ/cTJNPQ"
+    }
+]

@@ -71,6 +71,9 @@ export default function NavBar() {
             <Nav.Link as={Link} to="/contact" ref={contactRef} className="text-dark">
               Contact
             </Nav.Link>
+            <Nav.Link as={Link} to="/help" ref={contactRef} className="text-dark">
+              Assistance
+            </Nav.Link>
 
             {/* Sliding Underline */}
             <div

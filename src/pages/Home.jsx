@@ -18,7 +18,7 @@ export default function Home() {
       >
         <div className="container d-flex flex-column align-items-center justify-content-center text-center">
           <h1 className="fw-bold display-3 animate__animated animate__fadeInDown">
-            Welcome to <span className="text-primary">AZURE CARS</span>
+          <span className="text-primary">AZURE CARS</span>
           </h1>
           <p className="h5 text-warning mt-3 animate__animated animate__fadeInUp">
             Drive Your Dreams, Wherever You Go!
