@@ -14,6 +14,7 @@ import LocalCarDetails from './pages/Localcardetail';
 import Wishlist from './components/Wishlist';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Messages from './components/Messages';
 
 
 const carListLoader = async () => {
@@ -35,7 +36,7 @@ function App() {
     { path: "/login", element: <LoginPage /> },
     { path: "/admin", element: <RequireAdmin /> },
     { path: "/signup", element: <SignupPage /> },
-
+    { path: "/messages", element: <Messages /> },
     {
       path: "/", element: <Layout />,
       children: [
@@ -53,7 +54,8 @@ function App() {
         { path: "/search", element: <SearchFilter /> },
         { path: "/wishlist", element: <Wishlist /> },
         { path: "/about", element: <About /> },
-        { path: "/contact", element: <Contact /> }
+        { path: "/contact", element: <Contact /> },
+
       ]
     }
   ]);

@@ -1,21 +1,30 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link} from "react-router-dom";
+import "bootstrap-icons/font/bootstrap-icons.css"; // ✅ Import bootstrap icons
 
 export default function AdminPanel() {
   const navigate = useNavigate();
   const [cars, setCars] = useState([]);
+
+  // ✅ message count from localStorage (contact form)
+  const [messageCount, setMessageCount] = useState(0);
 
   // form fields
   const [name, setName] = useState("");
   const [seats, setSeats] = useState("");
   const [fuel, setFuel] = useState("");
   const [rentPerDay, setRentPerDay] = useState("");
-  const [status, setStatus] = useState("available"); // available / not available
+  const [status, setStatus] = useState("available");
   const [image, setImage] = useState("");
 
   useEffect(() => {
+    // Load cars
     const storedCars = JSON.parse(localStorage.getItem("localCars")) || [];
     setCars(storedCars);
+
+    // Load messages count from "contactMessages"
+    const storedMessages = JSON.parse(localStorage.getItem("contactMessages")) || [];
+    setMessageCount(storedMessages.length);
   }, []);
 
   const handleLogout = () => {
@@ -31,24 +40,22 @@ export default function AdminPanel() {
       return;
     }
 
-    // ✅ Get last used ID from localStorage, start from 10
     let lastId = parseInt(localStorage.getItem("lastCarId")) || 10;
 
     const newCar = {
-      id: lastId + 1, // first one will be 11
+      id: lastId + 1,
       name,
       seats: parseInt(seats),
       fuel,
       rentPerDay: parseInt(rentPerDay),
-      status, // available / not available
-      images: [image], // can later allow multiple URLs
+      status,
+      images: [image],
     };
 
     const updatedCars = [...cars, newCar];
     setCars(updatedCars);
     localStorage.setItem("localCars", JSON.stringify(updatedCars));
 
-    // ✅ Save last used ID so it continues correctly
     localStorage.setItem("lastCarId", newCar.id);
 
     // clear input fields
@@ -69,6 +76,29 @@ export default function AdminPanel() {
 
   return (
     <div style={{ textAlign: "center", marginTop: "30px" }}>
+      {/* === Top bar with mail icon === */}
+      <div style={{ display: "flex", justifyContent: "flex-end", marginRight: "30px" }}>
+        <Link to="/messages" style={{ position: "relative", cursor: "pointer", color: "inherit", textDecoration: "none" }}>
+          <i className="bi bi-envelope-fill" style={{ fontSize: "28px" }}></i>
+          {messageCount > 0 && (
+            <span
+              style={{
+                position: "absolute",
+                top: "-5px",
+                right: "-8px",
+                background: "red",
+                color: "white",
+                borderRadius: "50%",
+                padding: "3px 7px",
+                fontSize: "12px",
+              }}
+            >
+              {messageCount}
+            </span>
+          )}
+        </Link>
+      </div>
+
       <h1>Welcome, Admin!</h1>
 
       {/* === Add Car Form === */}
