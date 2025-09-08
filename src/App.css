@@ -55,17 +55,7 @@ body {
     position: relative;
 }
 
-/* .button::after {
-    content: "";
-    position: absolute;
-    width: 65%;
-    height: 60%;
-    border-radius: 120px;
-    top: 0;
-    right: 0;
-    box-shadow: 0 0 20px #ffffff38;
-    z-index: -1;
-} */
+ 
 
 .inner {
     padding: 14px 25px;
@@ -76,16 +66,4 @@ body {
     background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
 }
 
-/* .inner::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 14px;
-    background: radial-gradient(circle 60px at 0% 100%,
-            #00e1ff1a,
-            #0000ff11,
-            transparent);
-    position: absolute;
-} */
+ 
