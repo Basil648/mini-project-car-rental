@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import heroImg from '../assets/hero.png';
+import '../App.css'
 
 export default function Home() {
   return (
@@ -25,13 +26,14 @@ export default function Home() {
 
         {/* Content */}
         <div className=" mt-auto mb-5 container d-flex flex-column align-items-center justify-content-center text-center">
-          <Link
-            to="/cars"
-            className="btn btn-primary btn-lg px-5 rounded-pill mt-3 shadow-lg"
-            style={{ fontWeight: "600" }}
-          >
-            Get Started &rarr;
-          </Link>
+          <button class="button">
+           
+            <div class="inner">
+              <Link to="/cars" style={{ textDecoration: "none" }} >
+                Get Started &rarr;
+              </Link>
+            </div>
+          </button>
         </div>
       </section>
 
